@@ -2,6 +2,7 @@ package com.jet.guardians.gatling
 
 import java.util.Properties
 import java.time
+import java.time.Instant
 
 import com.fasterxml.jackson.databind.node._
 import org.apache.kafka.clients.producer.{KafkaProducer, ProducerConfig, ProducerRecord}
@@ -44,16 +45,17 @@ object StreamProducer {
       }
     }
     producer.close()
+
   }
 
   def newRandomTransaction(name: String): ProducerRecord[String, String] = {
 
-    val now = time.LocalDateTime.now
+    //val now = time.LocalDateTime.now
     val transaction = new ObjectNode(JsonNodeFactory.instance)
     val amount =  Random.nextInt(100)
     transaction.put("name", name)
     transaction.put("amount", amount)
-    transaction.put("time", now.toString)
+    transaction.put("time", Instant.ofEpochMilli(0L).toString)
 
     val record = new ProducerRecord[String, String]("bank-transactions", name, transaction.toString)
     record
