@@ -1,14 +1,11 @@
 package com.jet.guardians.gatling
 
 import java.util.Properties
-import java.time
 import java.time.Instant
-
-import com.fasterxml.jackson.databind.node._
-import org.apache.kafka.clients.producer.{KafkaProducer, ProducerConfig, ProducerRecord}
-import org.apache.kafka.common.serialization.StringSerializer
-
 import scala.util.Random
+import com.fasterxml.jackson.databind.node._
+import org.apache.kafka.clients.producer._
+
 
 object StreamProducer {
 

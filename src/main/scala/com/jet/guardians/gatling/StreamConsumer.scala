@@ -13,7 +13,7 @@ import org.apache.kafka.streams.kstream.KStreamBuilder
 import com.fasterxml.jackson.databind.node._
 
 
-object BankBalanceApp {
+object StreamConsumer {
 
   def newBalance(transaction: JsonNode, balanceUpdate: JsonNode): JsonNode = {
     val newBalance = new ObjectNode(JsonNodeFactory.instance)
@@ -35,7 +35,6 @@ object BankBalanceApp {
     config.put(StreamsConfig.APPLICATION_ID_CONFIG, "bank-balance-app")
     config.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "127.0.0.1:9092")
     config.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "earliest")
-
     config.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, "org.apache.kafka.common.serialization.StringSerializer")
     config.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, "org.apache.kafka.common.serialization.StringSerializer")
 
