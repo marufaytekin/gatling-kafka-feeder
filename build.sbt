@@ -1,4 +1,4 @@
-name := "KafkaStreams"
+name := "gatling-kafka-feeder"
 organization        := "com.jet.guardians.gatling"
 version             := "1.0-SNAPSHOT"
 
