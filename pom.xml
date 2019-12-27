@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.maruf.gatling</groupId>
+    <artifactId>gatling-kafka-feeder</artifactId>
+    <version>0.1-SNAPSHOT</version>
+
+    <name>Gatling Kafka Feeder</name>
+    <description>Kafka feeder reads messages from a Kafka topic and builds a Gatling feeder.</description>
+    <url>https://github.com/marufaytekin/gatling-kafka-feeder</url>
+
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <name>Maruf Aytekin</name>
+            <email>aaytekin@gmail.com</email>
+            <organization></organization>
+            <organizationUrl></organizationUrl>
+        </developer>
+    </developers>
+
+    <scm>
+        <connection>scm:git:git@github.com:marufaytekin/gatling-kafka-feeder.git</connection>
+        <developerConnection>scm:git:ssh://github.com:marufaytekin/gatling-kafka-feeder.git</developerConnection>
+        <url>https://github.com/marufaytekin/gatling-kafka-feeder/tree/master</url>
+    </scm>
+
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>net.alchim31.maven</groupId>
+                <artifactId>scala-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>compile</goal>
+                        </goals>
+                        <configuration>
+                            <args>
+                                <arg>-target:jvm-1.8</arg>
+                            </args>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.kafka</groupId>
+            <artifactId>kafka-clients</artifactId>
+            <version>0.11.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>io.gatling</groupId>
+            <artifactId>gatling-test-framework</artifactId>
+            <version>3.1.1</version>
+        </dependency>
+    </dependencies>
+
+</project>
