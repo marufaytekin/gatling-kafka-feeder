@@ -1,3 +1,5 @@
+![Java CI](https://github.com/marufaytekin/gatling-kafka-feeder/workflows/Java%20CI/badge.svg)
+
 Introduction
 ------------
 
