@@ -1,4 +1,4 @@
-package io.github.maruf.gatling
+package com.github.maruf
 
 import java.util
 import java.util.Properties
