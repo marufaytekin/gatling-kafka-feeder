@@ -11,7 +11,7 @@ Add as a Dependency as follows:
 build.sbt:
 
 ```bash
-libraryDependencies += "io.github.maruf.gatling" % "gatling-kafka-feeder" % "1.0" % Test
+libraryDependencies += "io.github.maruf.gatling" % "gatling-kafka-feeder" % "0.1" % Test
 ```
 
 pom.xml:
@@ -19,7 +19,7 @@ pom.xml:
 <dependency>
     <groupId>io.github.maruf.gatling</groupId>
     <artifactId>gatling-kafka-feeder</artifactId>
-    <version>1.0</version>
+    <version>0.1</version>
 </dependency>
 ```
 
