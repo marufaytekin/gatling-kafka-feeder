@@ -6,7 +6,7 @@ Kafka feeder reads `n` messages from a Kafka topic and builds a Gatling feeder. 
 Usage
 -----
 
-Add as a Dependency as follows:
+Add as a Dependency as follows.
 
 build.sbt:
 
