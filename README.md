@@ -6,18 +6,30 @@ Kafka feeder reads `n` messages from a Kafka topic and builds a Gatling feeder. 
 Usage
 -----
 
-Add as a Dependency in your build.sbt as follows:
+Add as a Dependency as follows:
+
+build.sbt:
 
 ```bash
-libraryDependencies += "com.maruf.gatling" % "gatling-kafka-feeder_2.12" % "0.0.1-SNAPSHOT" % Test
+libraryDependencies += "io.github.maruf.gatling" % "gatling-kafka-feeder" % "1.0" % Test
 ```
+
+pom.xml:
+```bash
+<dependency>
+    <groupId>io.github.maruf.gatling</groupId>
+    <artifactId>gatling-kafka-feeder</artifactId>
+    <version>1.0</version>
+</dependency>
+```
+
 
 Import the package and create the feeder:
 
 ```scala
-import com.maruf.gatling.Feeders._    
+import io.github.maruf.gatling.Feeders._
 
-....
+// ....
 
 val feeder = KafkaFeeder("localhost:9092", "my-topic", "consumer-group-id", "number-of-messages").circular
 ```

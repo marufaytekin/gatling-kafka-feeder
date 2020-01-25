@@ -1,4 +1,4 @@
-package com.maruf.gatling
+package io.github.maruf.gatling
 
 import java.util
 import java.util.Properties
@@ -10,15 +10,19 @@ import io.gatling.core.feeder.SourceFeederBuilder
 import scala.collection.JavaConverters._
 import scala.util.control.Breaks._
 
+
+/**
+ * This is a Feeder object that reads 'n' messages from a Kafka topic and creates a gatling feeder.
+ *
+ * @author maruf
+ */
+
 object Feeders {
 
-  /**
-   * Reads n messages from a Kafka topic and returns as Gatling Feeder.
-   */
   def KafkaFeeder(servers: String, topic: String, groupId: String, n: Int=100, autoOffsetReset: String="earliest"): SourceFeederBuilder[Object] = {
     val config = new Properties()
 
-    // control the amount of data to be processed in the polling loop.
+    // controls the amount of data to be processed in the polling loop.
     val maxPollRecords = if (n > 500) 500 else n
 
     config.put("bootstrap.servers", servers)

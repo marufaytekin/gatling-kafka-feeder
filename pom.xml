@@ -2,7 +2,7 @@
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.maruf.gatling</groupId>
+    <groupId>io.github.maruf.gatling</groupId>
     <artifactId>gatling-kafka-feeder</artifactId>
     <version>0.1-SNAPSHOT</version>
 
@@ -22,8 +22,6 @@
         <developer>
             <name>Maruf Aytekin</name>
             <email>aaytekin@gmail.com</email>
-            <organization></organization>
-            <organizationUrl></organizationUrl>
         </developer>
     </developers>
 
@@ -32,7 +30,6 @@
         <developerConnection>scm:git:ssh://github.com:marufaytekin/gatling-kafka-feeder.git</developerConnection>
         <url>https://github.com/marufaytekin/gatling-kafka-feeder/tree/master</url>
     </scm>
-
 
     <build>
         <plugins>
@@ -49,6 +46,31 @@
                                 <arg>-target:jvm-1.8</arg>
                             </args>
                         </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>3.1.1</version>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
                     </execution>
                 </executions>
             </plugin>
