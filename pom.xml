@@ -26,8 +26,8 @@
     </developers>
 
     <scm>
-        <connection>scm:git:git@github.com:marufaytekin/gatling-kafka-feeder.git</connection>
-        <developerConnection>scm:git:ssh://github.com:marufaytekin/gatling-kafka-feeder.git</developerConnection>
+        <connection>scm:git:https://github.com/marufaytekin/gatling-kafka-feeder</connection>
+        <developerConnection>scm:git:https://github.com/marufaytekin/gatling-kafka-feeder</developerConnection>
         <url>https://github.com/marufaytekin/gatling-kafka-feeder/tree/master</url>
     </scm>
 
@@ -74,8 +74,47 @@
                     </execution>
                 </executions>
             </plugin>
+            <plugin>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>2.5.3</version>
+                <configuration>
+                    <autoVersionSubmodules>true</autoVersionSubmodules>
+                    <tagNameFormat>@{project.version}</tagNameFormat>
+                    <releaseProfiles>release</releaseProfiles>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
+
+    <profiles>
+        <profile>
+            <id>release</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <version>1.6</version>
+                        <executions>
+                            <execution>
+                                <id>sign-artifacts</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                                <configuration>
+                                    <!-- Enable if GPG 2.1+ is used -->
+                                    <!--<gpgArguments>
+                                      <arg>&#45;&#45;pinentry-mode</arg>
+                                      <arg>loopback</arg>
+                                    </gpgArguments>-->
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 
     <dependencies>
         <dependency>
