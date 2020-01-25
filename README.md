@@ -31,5 +31,5 @@ import io.github.maruf.gatling.Feeders._
 
 // ....
 
-val feeder = KafkaFeeder("localhost:9092", "my-topic", "consumer-group-id", "number-of-messages").circular
+val feeder = KafkaFeeder("localhost:9092", "my-topic", "consumer-group-01", 100, "earliest").circular
 ```
