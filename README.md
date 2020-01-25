@@ -8,7 +8,7 @@ Kafka feeder reads `n` messages from a Kafka topic and builds a Gatling feeder. 
 Usage
 -----
 
-Add as a Dependency as follows.
+Add gatling-kafka-feeder as a dependency.
 
 build.sbt:
 ```bash
