@@ -9,7 +9,6 @@ Usage
 Add as a Dependency as follows.
 
 build.sbt:
-
 ```bash
 libraryDependencies += "com.github.maruf" % "gatling-kafka-feeder" % "0.1" % Test
 ```
