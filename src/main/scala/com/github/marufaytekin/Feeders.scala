@@ -1,4 +1,4 @@
-package com.github.maruf
+package com.github.marufaytekin
 
 import java.util
 import java.util.Properties

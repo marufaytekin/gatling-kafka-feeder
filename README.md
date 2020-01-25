@@ -10,13 +10,13 @@ Add as a Dependency as follows.
 
 build.sbt:
 ```bash
-libraryDependencies += "com.github.maruf" % "gatling-kafka-feeder" % "0.1" % Test
+libraryDependencies += "com.github.marufaytekin" % "gatling-kafka-feeder" % "0.1" % Test
 ```
 
 pom.xml:
 ```bash
 <dependency>
-    <groupId>com.github.maruf</groupId>
+    <groupId>com.github.marufaytekin</groupId>
     <artifactId>gatling-kafka-feeder</artifactId>
     <version>0.1</version>
 </dependency>
@@ -25,7 +25,7 @@ pom.xml:
 Import the package and create the feeder:
 
 ```scala
-import com.github.maruf.Feeders._
+import com.github.marufaytekin.Feeders._
 
 // ....
 
